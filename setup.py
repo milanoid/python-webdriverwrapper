@@ -15,6 +15,7 @@ setup(
     ],
 
     install_requires=[line.strip() for line in open('requirements.txt').readlines() if line],
+    setup_requires=['pytest-runner'],
     tests_require=['pyvirtualdisplay', 'pytest'],
     extras_require={
         'suggestion': ['python-Levenshtein'],
