@@ -5,7 +5,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-
 setup(
     name='webdriverwrapper',
     version='2.3.0',  # Can't use VERSION because of imports during install before installing dependencies.
@@ -16,6 +15,7 @@ setup(
     ],
 
     install_requires=[line.strip() for line in open('requirements.txt').readlines() if line],
+    tests_require=['pyvirtualdisplay', 'pytest'],
     extras_require={
         'suggestion': ['python-Levenshtein'],
     },
